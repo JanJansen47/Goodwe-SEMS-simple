@@ -52,9 +52,9 @@ if dat['msg'] =='success' :
     #mqtt communication based upon json.
     x = {
     "name": "zon",
-    "Eday": d4['eday'],
-    "Pnow": d4['output_power'],
-    "Etotal": round(tariff*d4['etotal'])
+    "Eday":   (d4['eday'])*tariff,
+    "Pnow":   d4['output_power'],
+    "Etotal": (round(d4['etotal']))*tariff
     }
     y= json.dumps(x)
     try:
